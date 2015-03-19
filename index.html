@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title>oli_counter demo</title>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="style.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.oli_counter-0.5.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(document).ready(function(){
+			
+			var cur = new Date(),
+				curY = cur.getFullYear(),
+				curM = cur.getMonth()+1,
+				curD = cur.getDate();
+				
+			$('.counter.wd').attr('data-end',curY+','+curM+','+curD+',18').oli_counter({
+				'times_array': Array(1, 60, 3600),
+				'group_text': Array('Sekunden','Minuten','Stunden'),
+				'animation_speed':100
+			});
+			
+			$('.counter.summer').attr('data-end',curY+',6,1').oli_counter({
+				'times_array': Array(1, 60, 3600, 86400, 2629800),
+				'animation_speed':200
+			});
+			
+			$('.counter.net').oli_counter({
+				'group_text': Array('секунд','минут','часов','дней','месяцев', 'лет'),
+				'animation_speed':900
+			});
+		
+			$('body').on('click',function(e){
+				if($(e.target).is('#y3000')){
+					e.preventDefault();
+					$(e.target).parent().prev().text($(e.target).val());
+					$('.counter.y3000').attr('data-end',curY+',12,31').oli_counter('destroy').oli_counter({
+						'times_array': Array(1, 60, 3600, 86400, 2629800),
+						'animation_speed':100
+					});
+				}
+				if($(e.target).is('#y0')){
+					e.preventDefault();
+					$(e.target).parent().prev().text($(e.target).val());
+					$('.counter.y3000').attr('data-end',curY+',1,1').oli_counter('destroy').oli_counter({
+						'times_array': Array(1, 60, 3600, 86400),
+						'animation_speed':1000
+					});
+				}
+			
+			});
+		});	
+		
+	</script>
+	
+</head>
+
+<body>
+	<h2>До конца рабочего дня</h2>
+	<!-- дата по образцу YYYY,MM,DD,HH,Mi,SS -->
+	<div class="counter wd" data-end="2015,03,17,18">Что-то пошло не так со счетчиком "До конца рабочего дня"</div>
+	<br><br>
+	<h2>До лета</h2>
+	<!-- дата по образцу YYYY,MM,DD,HH,Mi,SS -->
+	<div class="counter summer" data-end="2015,06,01">Что-то пошло не так со счетчиком "До лета"</div>
+	<br><br>
+	<h2>Со времени основания интернета</h2>
+	<!-- дата по образцу YYYY,MM,DD,HH,Mi,SS -->
+	<div class="counter net" data-end="1969,10,29,22,30,0">Что-то пошло не так со счетчиком "Со времени основания интернета"</div>
+	<br><br>
+	<h2>&nbsp;</h2>
+	<div>
+		<input type="button" id="y3000" value="До конца года"/>
+		<input type="button" id="y0" value="От начала года"/>
+	</div>	
+	<!-- дата по образцу YYYY,MM,DD,HH,Mi,SS -->
+	<div class="counter y3000">Ткните кнопку для запуска таймера</div>
+
+</body>
+</html>
