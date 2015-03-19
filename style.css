@@ -1,0 +1,140 @@
+/* Eric Meyer's CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of Eric Meyer's CSS Reset */
+
+html {
+	height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+body {
+	font: 16px/18px 'PT Serif',Arial, sans-serif;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	color: #000;
+	background: #fff;
+	overflow: hidden;
+	text-align:center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h2{
+font: bold 24px/30px 'Open Sans Condensed';
+color:#ccc;
+text-align:center;
+margin-top: 20px;
+}
+.counter{
+	display:inline-block;
+    font: bold 36px/30px 'Open Sans Condensed';
+    height: 79px;
+    
+	margin: 18px 0 0 -10px;
+}
+.counter__group{
+    float: left;
+    margin-left: 10px;
+    text-align: center;
+    /* width: 70px; */
+}
+.counter__group div{
+    background: #f1f1f1;
+    border-radius: 5px;	-moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px;
+    float: left;
+    height: 50px;
+    margin-left: 1px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 34px;
+    
+}
+.counter__group span{
+	box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+    height: 100%;
+    left: 0;
+	padding: 10px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.counter__group p{
+    font: 12px/28px 'Open Sans Condensed';
+    margin: 0;
+    text-transform: uppercase;
+}
+
+input {
+	margin: 10px 5px 0;
+	background: #eee;
+	border: 1px solid #ccc;
+	padding: 4px 10px;
+	border-radius: 3px;
+	outline: none;
+}
+input:hover{
+	background:#fff;
+}
+input:active{
+	background:#ccc;
+}
+
+.cf:before, .cf:after {
+    content: '';
+    display: table;
+}
+.cf:after{
+    clear: both;
+}
+.cf{
+    zoom: 1;
+	font-size:1px;
+	line-height:1px;
+}
