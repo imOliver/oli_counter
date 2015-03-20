@@ -9,6 +9,26 @@ Connect plugin in your HTML file:
 ```
 <script src="your_javascript_folder/jquery.oli_counter-0.5.js" type="text/javascript" charset="utf-8"></script>
 ```
+Insert HTML block for counter:
+```
+<div class="counter" data-end="YYYY,MM,DD,HH,MM,SS"></div>
+```
+
+To create and start default counter:
+```
+$('.counter.wd').oli_counter();
+```
+To create and start counter with options:
+```
+$('.counter.wd').oli_counter({
+	'times_array': Array(1, 60, 3600),
+	'animation_speed':100
+});
+```
+To stop counter:
+```
+$('.counter.wd').oli_counter('destroy');
+```
 
 You can tune the counter with options:
 * **times_array** - an array of integers, each of which specifies the group size counter in seconds. By default the numbers are 1, 60, 3600, 86400, 2629800, 31557600. If you want to show 3 groups of numbers "minutes", "hours", "days" this array must consist of 60, 3600, 86400. 
